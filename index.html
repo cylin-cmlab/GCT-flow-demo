@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v4.1.1">
+    <title>GCT Flow</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/carousel/">
+
+    <!-- Bootstrap core CSS -->
+<link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="carousel.css" rel="stylesheet">
+
+    <style>
+      /* Set the size of the div element that contains the map */
+      #map {
+        height: 100%;  /* The height is 100%, making this div a full page map */
+        width: 100%;   /* The width is 100% */
+        position: initial !important;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="#">Multi-Type GCT flow Playground</a>
+     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        
+      </ul>
+      <form class="form-inline mt-2 mt-md-0">
+        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="120" height="50" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500" style=""><image href="cht.png" x="0" y="0" height="100%" width="90%"></image></svg>
+        <a class="btn btn-outline-success my-2 my-sm-0" href="https://github.com/cylin-cmlab/GCT-Prediction" target="_blank">Github</a>
+      </form>
+    </div>
+    
+  </nav>
+</header>
+
+<main role="main">
+
+
+  <div class="container marketing" style="    margin-top: 50px;">
+
+    <!-- START THE FEATURETTES -->
+
+    <div class="row featurette" >
+      <div class="col-md-5 order-md-2">
+        <h1 class="">Introduction</h1>
+        <h2 class="" style="color: red !important;">What is GCT flow?</h2><div class="lead">GCT (Geographical Cellular Traffic) is cellular traffic data augmented with the location it was generated from, calculated using Chunghwa Telecom's proprietary algorithms. With its spatial attribute, we can flexibly select regions for data collection.
+
+</div><br><div class="lead">GCT flow refers to the accumulated GCT within a region over a specific time interval (typically 5 minutes). Over time, the series of GCT flows reflect the patterns of the respective region, which depend on the characteristics of the surrounding area.</div>
+      </div>
+      <div class="col-md-7 order-md-1">
+        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500px" height="500px" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500">
+  <title>Placeholder</title>
+  <image href="overview.png" x="0" y="0" height="100%" width="100%"></image>
+</svg>
+
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h1 class="">Dataset</h1>
+        <h2 class="" style="
+    color: cornflowerblue;
+">What is Multi-type GCT flow?</h2> 
+<div class="lead">We collaborated with Chunghwa Telecom to ascertain the type of user generating each Geographical Cellular Traffic (GCT), including Vehicle, Pedestrian, and Stationary types. Correspondingly, the GCT flow for each is represented by V-GCT, P-GCT, and S-GCT flows.
+
+</div><br><dic class="lead"> Leveraging multi-type GCT flows, we can initiate regional pattern analysis. For instance, commuting areas predominantly display a higher proportion of V-GCT flow compared to P-GCT and S-GCT flows. Conversely, in residential-commercial areas, P-GCT and S-GCT flows are relatively more significant.</dic>
+      </div>
+      <div class="col-md-5">
+        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500px" height="500px" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500">
+  <title>Placeholder</title>
+  <image href="three_types.png" x="0" y="0" height="100%" width="100%"></image>
+</svg>
+      </div>
+
+
+    </div>
+      <br>
+
+      <a class="btn btn-primary my-2 my-sm-0" href="https://github.com/cylin-cmlab/GCT-Prediction" target="_blank" >Download Data</a>
+
+     <hr class="featurette-divider">
+
+     <div class="row featurette">
+      <h2 style="margin: auto;"> Playground</h2>
+      <div class="col-md-12" style="overflow: scroll;position: relative;height: 600px;">
+        
+        <div id="map" style="overflow: hidden;position: initial;"></div>
+      </div>
+    </div>
+
+
+   
+
+    <hr class="featurette-divider">
+
+    <!-- /END THE FEATURETTES -->
+
+  </div><!-- /.container -->
+
+  <!-- Marketing messaging and featurettes
+  ================================================== -->
+  <!-- Wrap the rest of the page in another container to center all the content. -->
+
+  <div class="container marketing">
+    <h1 style="/* margin: auto; */text-align: center;margin-bottom: 50px;">Authors
+</h1>
+    <!-- Three columns of text below the carousel -->
+    <div class="row">
+      <div class="row">
+      <div class="col-lg-4">
+        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140">
+          <image href="a1.png" x="0" y="0" height="140px" width="140px"></image>
+        </svg>
+
+        <h2>ChungYi Lin</h2>
+        <p>Ph.D. in the candidate Graduate Institute of Networking and Multimedia  at National Taiwan University</p>
+        
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140">
+          <image href="a2.png" x="0" y="0" height="140px" width="140px"></image>
+        </svg>
+        <h2>Shen-Lung Tung</h2>
+        <p>Senior Researcher in the Department of Internet of Things at Chunghwa Telecom Laboratories.</p>
+        
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+        <h2>Winston H. Hsu</h2>
+        <p>Professor in the Department of Computer Science and Information Engineering at National Taiwan University.</p>
+        
+      </div><!-- /.col-lg-4 -->
+    </div>
+    </div><!-- /.row -->
+
+
+    
+
+    <!-- /END THE FEATURETTES -->
+
+  </div><!-- /.container -->
+
+
+  <!-- FOOTER -->
+  <footer class="container">
+    <p class="float-right"><a href="#">Back to top</a></p>
+    <p>Copyright © 2023 CMLab - Design: Above Authors</p>
+  </footer>
+</main>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="assets/dist/js/bootstrap.bundle.min.js"></script>
+
+   <!-- Google map -->
+        <script>
+      // Initialize and add the map
+      function initMap() {
+        // The location of the center
+        const center = {lat: 24.804860, lng: 120.974624};
+
+        // The map, centered at the center
+        const map = new google.maps.Map(
+            document.getElementById('map'), {zoom: 14, center: center});
+
+        // An array of GPS locations. Replace these with your own locations.
+        let locations = [
+          {lat: 24.810974, lng: 120.970021, id: "63"},
+          {lat: 24.786925, lng: 120.986707, id: "59"},
+          {lat: 24.786012, lng: 120.988147, id: "62"},
+          {lat: 24.788248, lng: 120.982291, id: "57"},
+          {lat: 24.790287, lng: 120.976608, id: "56"},
+          {lat: 24.794813, lng: 120.972512, id: "54"},
+          {lat: 24.805295, lng: 120.992679, id: "45"},
+          {lat: 24.795998, lng: 120.997936, id: "32"},
+          {lat: 24.801061, lng: 120.987161, id: "30"},
+          {lat: 24.815031, lng: 120.985235, id: "15"},
+          {lat: 24.814245, lng: 120.974301, id: "16"},
+          {lat: 24.796506, lng: 120.952382, id: "12"},
+          {lat: 24.805481, lng: 120.977173, id: "6"},
+          {lat: 24.794781, lng: 120.965201, id: "44"},
+          {lat: 24.804961, lng: 120.966084, id: "35"},
+          {lat: 24.796701, lng: 120.960701, id: "11"},
+          {lat: 24.798249, lng: 120.978117, id: "43"},
+          {lat: 24.802567, lng: 120.965172, id: "36"},
+          {lat: 24.812155, lng: 120.971898, id: "41"},
+          {lat: 24.813821, lng: 120.967381, id: "1"},
+          {lat: 24.809132, lng: 120.960126, id: "202202"}
+      ];
+
+        /**
+        // Add a marker for each location in the array
+        for (let location of locations) {
+          const marker = new google.maps.Marker({position: location, map: map});
+
+          // Add a click listener for each marker
+          marker.addListener("click", () => {
+            const infoWindow = new google.maps.InfoWindow({
+              content: `<h1>${location.id}</h1>`,
+            });
+
+            infoWindow.open(map, marker);
+          });
+        }
+        **/
+        for (let location of locations) {
+              const marker = new google.maps.Marker({
+                  position: location,
+                  icon: {
+                      url: "icons8-traffic-32.png",
+                      scaledSize: new google.maps.Size(30, 30),
+                  },
+                  map: map
+              });
+
+             marker.addListener("click", () => {
+    const infoWindow = new google.maps.InfoWindow({
+        content: `<div id="content" style="width:700px; height:400px;">
+                      
+                      <iframe src="line_chart.html?para=${location.id}" style="border:none; width:100%; height:100%;"></iframe>
+                    </div>`
+    });
+
+    // Open the infoWindow
+    infoWindow.open(map, marker);
+
+    // Add a domready event listener to resize the content
+    google.maps.event.addListener(infoWindow, 'domready', function() {
+        const iwOuter = document.querySelector('.gm-style-iw');
+        const iwBackground = iwOuter.previousElementSibling;
+
+        // Removes background shadow DIV
+        iwBackground.childNodes[1].style.display = "none";
+
+        // Removes white background DIV
+        iwBackground.childNodes[3].style.display = "none";
+
+        // Changes the desired tail shadow color
+        iwBackground.childNodes[2].childNodes[0].style['boxShadow'] = 'none';
+
+        // Reference to the div that groups the close button elements
+        const iwCloseBtn = iwOuter.nextSibling;
+
+        // Apply desired effect to the close button
+        iwCloseBtn.style.display = "none";
+
+        // If the content of infowindow is not clicable you can uncomment these two lines of code
+        // iwBackground.style.pointerEvents = 'none';
+        // iwCloseBtn.style.pointerEvents = 'none';
+    });
+
+    // This will execute after a delay to give the iframe time to load
+    setTimeout(() => {
+      const iframe = document.getElementById('myIframe');
+      const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+
+      // Find the select element and set its value
+      const selectElement = iframeDocument.getElementById('idSelector');
+      selectElement.value = location.id;
+
+
+      
+      // Trigger change event for the select element
+      let event = new Event('change');
+      selectElement.dispatchEvent(event);
+    }, 5000);  // 5000 milliseconds = 5 seconds
+});
+
+          }
+      }
+    </script>
+
+
+
+    <!-- Load the API from the specified URL
+    * The async attribute allows the browser to render the page while the API loads
+    * The key parameter will contain your own API key (which is not needed in this example)
+    * The callback parameter executes the initMap() function
+    -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyACNY0Ulsv854nOM-9xzyKVdHIUs1I-TcU&callback=initMap">
+    </script>
+</html>
